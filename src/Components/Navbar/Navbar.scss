@@ -20,12 +20,32 @@
     div {
       padding: 1rem;
       transition: all 0.3s;
+      height: 100%;
       &:hover {
-        height: 100%;
         cursor: pointer;
         background-color: black;
         color: white;
       }
     }
+    &--arr {
+      background-color: brown;
+      color: white;
+      &:hover {
+        color: brown !important;
+        background-color: white !important;
+      }
+    }
+    &--sort {
+      background-color: chocolate;
+      color: white;
+      &:hover {
+        color: chocolate !important;
+        background-color: white !important;
+      }
+    }
   }
+}
+
+.active {
+  background-color: greenyellow !important;
 }
