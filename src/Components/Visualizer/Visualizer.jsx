@@ -3,6 +3,7 @@ import {getBubbleSortAnimation} from '../../Algorithms/BubbleSort';
 import './Visualizer.scss';
 
 import Navbar from '../Navbar/Navbar';
+import {AlgorithmProvider} from '../../context/Algorithm.context'
 
 import {numberToWord, colorChange, swapAinmation, randomIntFromInterval} from './Helpers';
 
@@ -27,7 +28,8 @@ function Visualizer() {
 
     return (
         <div className="visualize">
-            <Navbar/>
+          <AlgorithmProvider>
+            <Navbar bubbleSort={bubbleSort} array={array} resetArray={resetArray}/>
             <div className="bars">
                 {array.map((value, idx) => {
                     let cls = numberToWord(value);
@@ -41,9 +43,7 @@ function Visualizer() {
                     >{value}</div>)
                 })}
             </div>
-            <button onClick={() => bubbleSort(array)}>
-                Bubble sort
-            </button>
+          </AlgorithmProvider>
         </div>
     )
 }
