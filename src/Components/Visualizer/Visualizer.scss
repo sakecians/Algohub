@@ -1,0 +1,51 @@
+.bars {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.array-bars {
+  position: relative;
+  width: 50px;
+  margin: 0 1px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 50px;
+  margin: 1rem;
+}
+
+.array-bars.transition {
+  transition: transform ease-in 0.3s;
+  background-color: red !important;
+}
+
+#childA {
+  background-color: beige;
+}
+
+#childB {
+  background-color: blue;
+}
+
+.visualize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
