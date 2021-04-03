@@ -28,7 +28,15 @@
 
 .array-bars.transition {
   transition: transform ease-in 0.3s;
+  background-color: yellow !important;
+}
+
+.array-bars.compare {
   background-color: red !important;
+}
+
+.array-bars.placed {
+  background-color: blue !important;
 }
 
 #childA {
