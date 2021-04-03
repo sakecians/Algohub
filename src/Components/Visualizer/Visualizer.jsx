@@ -5,7 +5,7 @@ import './Visualizer.scss';
 import Navbar from '../Navbar/Navbar';
 import {AlgorithmProvider} from '../../context/Algorithm.context'
 
-import {numberToWord, colorChange, swapAinmation, randomIntFromInterval} from './Helpers';
+import {numberToWord,placeCorrect, colorChange, swapAinmation, randomIntFromInterval} from './Helpers';
 
 
 const NUMBER_OF_ARRAY_BARS = 10;
@@ -54,7 +54,10 @@ function bubbleSort(array){
   var i=0;
   function myLoop() {                                     
     setTimeout(function() {
-      if(animations[i][0] > animations[i][1]){
+      if(animations[i].length === 1){
+        placeCorrect(animations[i][0]);
+      }
+      else if(animations[i][0] > animations[i][1]){
         swapAinmation(animations[i][0], animations[i][1]);
       }else{
         colorChange(animations[i][0], animations[i][1]);
