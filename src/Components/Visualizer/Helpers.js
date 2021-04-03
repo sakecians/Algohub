@@ -23,14 +23,21 @@ export function colorChange(one, two){
   const childA = document.querySelector(`.${classNameA}`);
   const childB = document.querySelector(`.${classNameB}`);
 
-  childA.classList.add('transition');
-  childB.classList.add('transition');
+  childA.classList.add('compare');
+  childB.classList.add('compare');
 
   setTimeout(() => {
-    childA.classList.remove('transition');
-    childB.classList.remove('transition');
+    childA.classList.remove('compare');
+    childB.classList.remove('compare');
 
   }, 300);
+}
+
+export function placeCorrect(one){
+  let className = numberToWord(one);
+  const child = document.querySelector(`.${className}`);
+
+  child.classList.add("placed");
 }
 
 export function swapAinmation(one, two){
