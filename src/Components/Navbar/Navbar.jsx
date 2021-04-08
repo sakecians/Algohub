@@ -3,13 +3,14 @@ import './Navbar.scss';
 import {AlgorithmContext} from '../../context/Algorithm.context'
 
 function Navbar(props) {
-    const {resetArray, array, bubbleSort} = props;
+    const {setArray, resetArray, array, bubbleSort, mergeSort} = props;
     const {algorithm, updateAlgorithm} = useContext(AlgorithmContext);
     const handleSort = () => {
         if(algorithm === "bubble"){
-            bubbleSort(array)
+            bubbleSort(array, setArray);
         }else if (algorithm === "merge"){
-            alert("Its yet to be implemented")
+            mergeSort(array, setArray);
+            // alert("Its yet to be implemented")
         } else if(algorithm === "quick"){
             alert("Its yet to be implemented")
         } else if (algorithm === "heap"){

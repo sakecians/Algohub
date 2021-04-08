@@ -21,14 +21,20 @@ export function getBubbleSortAnimation(array){
     let animations = [];
     let passedArr = array.slice();
     for(let i=passedArr.length; i>0; i--){
+        var noSwaps = true;
         let j;
         for(j=0; j<(i-1); j++){
             animations.push([passedArr[j],passedArr[j+1]]);
             if(passedArr[j] > passedArr[j+1]) {
+                noSwaps = false;
                 let temp   = passedArr[j+1];
                 passedArr[j+1] = passedArr[j];
                 passedArr[j]   = temp;
             }
+        }
+        if(noSwaps){
+            animations.push(["sorted"])
+            break;
         }
         animations.push([passedArr[j]]);
     }
