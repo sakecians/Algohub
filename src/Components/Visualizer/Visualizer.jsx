@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {getBubbleSortAnimation} from '../../Algorithms/BubbleSort';
 import {getMergeSortAnimations} from '../../Algorithms/Test';
+import {getQuickSortAnimation} from '../../Algorithms/QuickSort';
 import './Visualizer.scss';
 
 import Navbar from '../Navbar/Navbar';
@@ -12,13 +13,14 @@ import {numberToWord,
         swapAinmation, 
         randomIntFromInterval, 
         moveElementTo,
-        changeBarColor,
         mergeColorChange,
-        completedColor}
+        completedColor,
+        ANIMATION_SPEED}
         from './Helpers';
 
 
-const NUMBER_OF_ARRAY_BARS = 20;
+const NUMBER_OF_ARRAY_BARS = 10;
+// export const ANIMATION_SPEED = 500;
 
 function Visualizer() {
     const [array, setArray] = useState([]);
@@ -43,7 +45,8 @@ function Visualizer() {
             <Navbar 
               setArray={setArray} 
               mergeSort={mergeSort} 
-              bubbleSort={bubbleSort} 
+              bubbleSort={bubbleSort}
+              quickSort={quickSort} 
               array={array} 
               resetArray={resetArray}
               />
@@ -74,7 +77,7 @@ async function bubbleSort(array, setArray){
   function myLoop() {                                     
     setTimeout(function() {
       if(animations[i].length === 1){
-        if(animations[i][0] == "sorted"){
+        if(animations[i][0] === "sorted"){
           completedColor('blue');
         }else{
           placeCorrect(animations[i][0]);
@@ -89,7 +92,7 @@ async function bubbleSort(array, setArray){
       if (i < animations.length) {                          
         myLoop();                                           
       }                                                     
-    }, 500)
+    }, ANIMATION_SPEED)
   }
   myLoop();
   setArray(array.sort());
@@ -98,8 +101,6 @@ async function bubbleSort(array, setArray){
 
 async function mergeSort(array, setArray){
   let animations = getMergeSortAnimations(array);
-  //console.log(animations);
-  //changeBarColor();
   let i = 0;
   async function myLoop() {
     setTimeout(async function() {
@@ -118,7 +119,32 @@ async function mergeSort(array, setArray){
       if(i < animations.length){
         await myLoop();
       }
-    }, 800)
+    }, ANIMATION_SPEED)
+  }
+  await myLoop();
+  setArray(array.sort());
+}
+
+async function quickSort(array, setArray){
+  let animations = getQuickSortAnimation(array);
+  animations.push(["completed"]);
+  let i = 0;
+  async function myLoop() {
+    setTimeout(async function() {
+      if(animations[i].length === 1){
+        completedColor('blue')
+      }else if(animations[i][0] === "compare"){
+        colorChange(animations[i][1], animations[i][2]);
+      }else if(animations[i][0] === "placed"){
+        placeCorrect(animations[i][1]);
+      }else {
+        swapAinmation(animations[i][0], animations[i][1]);
+      }
+      i++;
+      if(i < animations.length){
+        await myLoop();
+      }
+    }, ANIMATION_SPEED)
   }
   await myLoop();
   setArray(array.sort());

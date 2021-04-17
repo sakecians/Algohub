@@ -1,4 +1,9 @@
-import {getBubbleSortAnimation} from '../../Algorithms/BubbleSort';
+import {getQuickSortAnimation} from '../../Algorithms/QuickSort';
+
+export const ANIMATION_SPEED = 800;
+
+const SPEED = ANIMATION_SPEED-200;
+
 export function numberToWord(num){
     let parsed = num.toString().split('');
     let result = [];
@@ -31,7 +36,7 @@ export function colorChange(one, two){
     childB.classList.remove('compare');
     childA.style.background = 'turquoise';
     childB.style.background = 'turquoise';
-  }, 300);
+  }, SPEED);
 }
 
 export function colorChangeSingle(one){
@@ -42,7 +47,7 @@ export function colorChangeSingle(one){
 
   setTimeout(() => {
     childA.classList.remove('compare');
-  }, 300);
+  }, SPEED);
 }
 
 export function placeCorrect(one){
@@ -97,7 +102,7 @@ export function swapAinmation(one, two){
 
       childA.textContent = two;
       childB.textContent = one;
-    }, 300);
+    }, SPEED);
 }
 
 export function testSortingAlgorithms() {
@@ -108,8 +113,8 @@ export function testSortingAlgorithms() {
         array.push(randomIntFromInterval(-1000, 1000));
       }
       const javaScriptSortedArray = array.slice().sort((a, b) => a - b);
-      const mergeSortedArray = getBubbleSortAnimation(array.slice());
-      console.log(arraysAreEqual(javaScriptSortedArray, mergeSortedArray));
+      const quickSortedArray = getQuickSortAnimation(array.slice());
+      console.log(arraysAreEqual(javaScriptSortedArray, quickSortedArray));
     }
 }
 
@@ -179,7 +184,7 @@ export function moveElementTo(idx, value){
 
     childA.textContent = textB;
     childB.textContent = textA;
-  }, 100);
+  }, SPEED);
 }
 
 export function mergeColorChange(arr1, arr2){
@@ -189,7 +194,7 @@ export function mergeColorChange(arr1, arr2){
     child.style.background = '#da00f7';
     setTimeout(function() {
       child.style.background = 'turquoise';
-    }, 200)
+    }, SPEED)
   }
   for(let i=0; i < arr2.length; i++){
     let className = numberToWord(arr2[i]);
@@ -197,7 +202,7 @@ export function mergeColorChange(arr1, arr2){
     child.style.background = "#750485";
     setTimeout(function() {
       child.style.background = 'turquoise';
-    }, 200)
+    }, SPEED)
   }
 }
 
