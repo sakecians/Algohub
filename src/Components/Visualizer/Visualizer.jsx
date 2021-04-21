@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {getBubbleSortAnimation} from '../../Algorithms/BubbleSort';
 import {getMergeSortAnimations} from '../../Algorithms/Test';
 import {getQuickSortAnimation} from '../../Algorithms/QuickSort';
+import {getRadixSortAnimations} from '../../Algorithms/RadixSort';
 import './Visualizer.scss';
 
 import Navbar from '../Navbar/Navbar';
@@ -15,7 +16,8 @@ import {numberToWord,
         moveElementTo,
         mergeColorChange,
         completedColor,
-        ANIMATION_SPEED}
+        ANIMATION_SPEED,
+        groupChangeColor}
         from './Helpers';
 
 
@@ -46,7 +48,8 @@ function Visualizer() {
               setArray={setArray} 
               mergeSort={mergeSort} 
               bubbleSort={bubbleSort}
-              quickSort={quickSort} 
+              quickSort={quickSort}
+              radixSort={radixSort} 
               array={array} 
               resetArray={resetArray}
               />
@@ -148,6 +151,38 @@ async function quickSort(array, setArray){
   }
   await myLoop();
   setArray(array.sort());
+}
+
+function radixSort(array, setArray){
+  const animations = getRadixSortAnimations(array);
+  animations.push(["completed"])
+  // console.log(animations);
+  let i = 0;
+  function myLoop(){
+    setTimeout(function (){
+      if(animations[i].length === 1 && animations[i][0] === 'completed'){
+        completedColor('blue');
+      }
+      else if(animations[i][0] === 'digitBucket'){
+        let digitBucket = animations[i][1];
+        for(let j=0; j<digitBucket.length; j++){
+          if(digitBucket[j].length !== 0){
+            //changeColor
+            groupChangeColor(digitBucket[j]);
+            // console.log(["group", ...digitBucket[j]])
+          }
+        }
+      }else if(animations[i][0] === 'nums'){
+        // console.log(animations[i][1]);
+        setArray(animations[i][1])
+      }      
+      i++;
+      if(i < animations.length){
+        myLoop()
+      }
+    }, ANIMATION_SPEED+500)
+  }
+  myLoop();
 }
 
 

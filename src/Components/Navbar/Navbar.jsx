@@ -3,7 +3,7 @@ import './Navbar.scss';
 import {AlgorithmContext} from '../../context/Algorithm.context'
 
 function Navbar(props) {
-    const {setArray, resetArray, array, bubbleSort, mergeSort, quickSort} = props;
+    const {setArray, resetArray, array, bubbleSort, mergeSort, quickSort, radixSort} = props;
     const {algorithm, updateAlgorithm} = useContext(AlgorithmContext);
     const handleSort = () => {
         if(algorithm === "bubble"){
@@ -14,8 +14,9 @@ function Navbar(props) {
         } else if(algorithm === "quick"){
             quickSort(array, setArray);
             // alert("Its yet to be implemented")
-        } else if (algorithm === "heap"){
-            alert("Its yet to be implemented")
+        } else if (algorithm === "radix"){
+            // alert("Its yet to be implemented")
+            radixSort(array, setArray);
         } else {
             alert("please select a choice")
         }
@@ -45,10 +46,10 @@ function Navbar(props) {
                     Quick Sort
                 </div>
                 <div 
-                    onClick={() => updateAlgorithm("heap")}
-                    className={algorithm === "heap" ? 'active' : null}
+                    onClick={() => updateAlgorithm("radix")}
+                    className={algorithm === "radix" ? 'active' : null}
                 >
-                    Heap Sort
+                    Radix Sort
                 </div>
                 <div
                     onClick={() => resetArray()}  
