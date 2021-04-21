@@ -246,3 +246,17 @@ export function completedColor(color){
     bars[i].style.background = color;
   }
 }
+
+export function groupChangeColor(arr){
+  let bars = [];
+  let color = randomColor();
+  for(let i=0; i<arr.length; i++){
+    let className = numberToWord(arr[i]);
+    let bar = document.querySelector(`.${className}`);
+    bars.push(bar);
+  }
+  // console.log(bars);
+  for(let i=0; i<bars.length; i++){
+    bars[i].style.background = color;
+  } 
+}
