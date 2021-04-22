@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {getBubbleSortAnimation} from '../../Algorithms/BubbleSort';
 import {getMergeSortAnimations} from '../../Algorithms/Test';
 import {getQuickSortAnimation} from '../../Algorithms/QuickSort';
 import {getRadixSortAnimations} from '../../Algorithms/RadixSort';
+
+
 import './Visualizer.scss';
 
 import Navbar from '../Navbar/Navbar';
-import {AlgorithmProvider} from '../../context/Algorithm.context'
+import CodeView from '../CodeView/CodeView';
+import {AlgorithmProvider} from '../../context/Algorithm.context';
 
 import {numberToWord,
         placeCorrect, 
@@ -66,15 +69,20 @@ function Visualizer() {
                     >{value}</div>)
                 })}
             </div>
-          </AlgorithmProvider>
+            <div className="code">
+              <CodeView/>
+            </div>
+            </AlgorithmProvider>
         </div>
     )
 }
 
-
+///////////////////////////////////////////////////////////////
+//BUBBLE SORT
+//////////////////////////////////////////////////////////////
 async function bubbleSort(array, setArray){
   let animations = getBubbleSortAnimation(array);
-  // console.log(animations);
+  // console.log(animations)
 
   var i=0;
   function myLoop() {                                     
@@ -102,6 +110,9 @@ async function bubbleSort(array, setArray){
    
 }
 
+///////////////////////////////////////////////////////////////
+//MERGE SORT
+//////////////////////////////////////////////////////////////
 async function mergeSort(array, setArray){
   let animations = getMergeSortAnimations(array);
   let i = 0;
@@ -128,6 +139,10 @@ async function mergeSort(array, setArray){
   setArray(array.sort());
 }
 
+
+///////////////////////////////////////////////////////////////
+//QUICK SORT
+//////////////////////////////////////////////////////////////
 async function quickSort(array, setArray){
   let animations = getQuickSortAnimation(array);
   animations.push(["completed"]);
@@ -153,6 +168,10 @@ async function quickSort(array, setArray){
   setArray(array.sort());
 }
 
+
+///////////////////////////////////////////////////////////////
+//RADIX SORT
+//////////////////////////////////////////////////////////////
 function radixSort(array, setArray){
   const animations = getRadixSortAnimations(array);
   animations.push(["completed"])

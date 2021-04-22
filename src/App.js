@@ -1,9 +1,12 @@
 import Visualizer from './Components/Visualizer/Visualizer';
+import {AlgorithmProvider} from './context/Algorithm.context';
 
 function App() {
   return (
     <div className="App">
-      <Visualizer/>
+      {/* <AlgorithmProvider> */}
+        <Visualizer/>
+      {/* </AlgorithmProvider> */}
     </div>
   );
 }

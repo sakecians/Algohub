@@ -4,7 +4,7 @@ export const AlgorithmContext = createContext();
 
 export function AlgorithmProvider(props){
 
-    const [algorithm, setAlgorithm] = useState({});
+    const [algorithm, setAlgorithm] = useState("bubble");
     
     function updateAlgorithm(newAlgorithm){
         setAlgorithm((algorithm) => {
