@@ -8,9 +8,9 @@
 
 .array-bars {
   position: relative;
-  width: 50px;
   margin: 0 1px;
   text-align: center;
+  width: 50px;
   // transform: rotate(180deg);
 }
 
@@ -66,4 +66,12 @@ button {
   right: 1rem;
   width: 21rem;
   height: 20rem;
+}
+
+.input-size {
+  text-align: center;
+  h3 {
+    margin: 0;
+  }
+  margin-bottom: 0.5rem;
 }

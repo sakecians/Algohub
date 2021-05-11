@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {getBubbleSortAnimation} from '../../Algorithms/BubbleSort';
 import {getMergeSortAnimations} from '../../Algorithms/Test';
 import {getQuickSortAnimation} from '../../Algorithms/QuickSort';
@@ -24,11 +24,12 @@ import {numberToWord,
         from './Helpers';
 
 
-const NUMBER_OF_ARRAY_BARS = 10;
+
 // export const ANIMATION_SPEED = 500;
 
 function Visualizer() {
     const [array, setArray] = useState([]);
+    const [size, setSize] = useState(10);
 
     useEffect(() => {
         resetArray();
@@ -36,11 +37,20 @@ function Visualizer() {
 
     function resetArray() {
         const newArray = [];
-        for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
+        for (let i = 0; i < size; i++) {
             newArray.push(randomIntFromInterval(20, 550));
         }
         setArray(newArray);
         completedColor("turquoise")
+    }
+
+    const handleSizeChange = (e) => {
+      let value = Number(e.target.value);
+      setSize(() => value);
+    }
+
+    const handleKeyDown = (e) => {
+      if(e.key === 'Enter') resetArray();
     }
 
 
@@ -56,6 +66,15 @@ function Visualizer() {
               array={array} 
               resetArray={resetArray}
               />
+            <div className="input-size">
+              <h3>Enter size (Press enter)</h3>
+              <input 
+                type="number"
+                value={size}
+                onChange={handleSizeChange}
+                onKeyDown={handleKeyDown}
+              />
+            </div>  
             <div className="bars">
                 {array.map((value, idx) => {
                     let cls = numberToWord(value);
