@@ -88,9 +88,9 @@ function Visualizer() {
                     >{value}</div>)
                 })}
             </div>
-            <div className="code">
+            {/* <div className="code">
               <CodeView/>
-            </div>
+            </div> */}
             </AlgorithmProvider>
         </div>
     )
