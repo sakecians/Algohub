@@ -1,8 +1,23 @@
 import {getQuickSortAnimation} from '../../Algorithms/QuickSort';
 
-export const ANIMATION_SPEED = 800;
+import { useState } from 'react';
 
-const SPEED = ANIMATION_SPEED-200;
+export let ANIMATION_SPEED;
+
+let SPEED;
+
+export const UseInputState = (passedValue) => {
+    const [value, setValue] = useState(passedValue);
+    const handleChange = e => {
+      let value = Number(e.target.value);
+        setValue(value);
+        ANIMATION_SPEED = value;
+        SPEED = ANIMATION_SPEED-200;
+    };
+    return [value, handleChange];
+};
+
+
 
 export function numberToWord(num){
     let parsed = num.toString().split('');

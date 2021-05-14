@@ -19,7 +19,7 @@ function mergeSort(arr, leftIdx, rightIdx){
 
 function merge(arr, start, mid, end){
     let start2 = mid + 1;
-    console.log(`Merging left : ${arr.slice(start, mid+1)} right : ${arr.slice(start2,end+1)}`);
+    // console.log(`Merging left : ${arr.slice(start, mid+1)} right : ${arr.slice(start2,end+1)}`);
     animations.push(["merge", arr.slice(start, mid+1), arr.slice(start2, end+1)]);
 
     if(arr[mid] <= arr[start2]) {
@@ -37,7 +37,7 @@ function merge(arr, start, mid, end){
             // Shift all the elements between element 1
             // element 2, right by 1.
             while (index !== start) {
-                console.log(`Moving ${index-1} to ${index}`)
+                // console.log(`Moving ${index-1} to ${index}`)
                 animations.push([index, arr[index-1]]);
                 arr[index] = arr[index - 1];
                 index--;

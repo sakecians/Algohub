@@ -20,7 +20,8 @@ import {numberToWord,
         mergeColorChange,
         completedColor,
         ANIMATION_SPEED,
-        groupChangeColor}
+        groupChangeColor,
+        UseInputState}
         from './Helpers';
 
 
@@ -30,6 +31,7 @@ import {numberToWord,
 function Visualizer() {
     const [array, setArray] = useState([]);
     const [size, setSize] = useState(10);
+    const [speed, setSpeed] = UseInputState(500);
 
     useEffect(() => {
         resetArray();
@@ -73,6 +75,14 @@ function Visualizer() {
                 value={size}
                 onChange={handleSizeChange}
                 onKeyDown={handleKeyDown}
+              />
+            </div>
+            <div className="input-size">
+              <h3>Enter speed (Beta) - this might break the application)</h3>
+              <input 
+                type="number"
+                value={speed}
+                onChange={setSpeed}
               />
             </div>  
             <div className="bars">
