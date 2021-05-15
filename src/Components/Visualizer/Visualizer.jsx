@@ -8,6 +8,7 @@ import "./Visualizer.scss";
 
 import Navbar from "../Navbar/Navbar";
 import CodeView from "../CodeView/CodeView";
+import CodeViewPy from '../CodeView/CodeViewPy';
 import { AlgorithmContext } from "../../context/Algorithm.context";
 
 import {
@@ -148,7 +149,7 @@ function Visualizer() {
         </div>
         <div>
           <b>Python</b>
-          <CodeView />
+          <CodeViewPy />
         </div>
       </div>
     </div>

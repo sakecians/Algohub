@@ -98,9 +98,10 @@ button {
 .code {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: auto;
   height: auto;
+  padding: 1rem;
   div {
     margin: 1rem;
     div {

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {JS_BUBBLE, JS_QUICK, JS_MERGE, JS_RADIX} from '../../Algorithms/Codes';
+import {PY_BUBBLE, PY_QUICK, PY_MERGE, PY_RADIX} from '../../Algorithms/Codes';
 import {AlgorithmContext} from '../../context/Algorithm.context';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -9,8 +9,8 @@ export default function CodeView() {
 
     return (
         <div>
-            <SyntaxHighlighter language="javascript" style={docco}>
-                {algorithm === "bubble" ? JS_BUBBLE : algorithm === "quick" ? JS_QUICK : algorithm === "radix" ? JS_RADIX : algorithm === "merge" ? JS_MERGE : ''}
+            <SyntaxHighlighter language="python" style={docco}>
+                {algorithm === "bubble" ? PY_BUBBLE : algorithm === "quick" ? PY_QUICK : algorithm === "radix" ? PY_RADIX : algorithm === "merge" ? PY_MERGE : ''}
             </SyntaxHighlighter>
         </div>
     )
