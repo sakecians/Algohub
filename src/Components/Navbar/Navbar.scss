@@ -5,6 +5,11 @@
   width: 100%;
   height: 4rem;
   background-color: bisque;
+  &__select {
+    width: 13rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
   &__brand {
     width: 30%;
     display: flex;
@@ -17,33 +22,54 @@
     display: flex;
     justify-content: space-evenly;
     width: 70%;
+
     div {
       padding: 1rem;
       transition: all 0.3s;
       height: 100%;
-      &:hover {
-        cursor: pointer;
-        background-color: black;
-        color: white;
-      }
+      // &:hover {
+      //   cursor: pointer;
+      //   background-color: black;
+      //   color: white;
+      // }
     }
-    &--arr {
-      background-color: brown;
-      color: white;
-      &:hover {
-        color: brown !important;
-        background-color: white !important;
-      }
-    }
-    &--sort {
-      background-color: chocolate;
-      color: white;
-      &:hover {
-        color: chocolate !important;
-        background-color: white !important;
-      }
-    }
+    // &--arr {
+    //   background-color: brown;
+    //   color: white;
+    //   &:hover {
+    //     color: brown !important;
+    //     background-color: white !important;
+    //   }
+    // }
+    // &--sort {
+    //   background-color: chocolate;
+    //   color: white;
+    //   &:hover {
+    //     color: chocolate !important;
+    //     background-color: white !important;
+    //   }
+    // }
+    // &--sort-disabled {
+    //   background-color: chocolate;
+    //   color: white;
+    //   &:hover {
+    //     pointer-events: none;
+    //     color: chocolate !important;
+    //     background-color: white !important;
+    //   }
+    // }
   }
+}
+
+.quiz {
+  width: 10%;
+  height: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  text-decoration: none;
 }
 
 .active {

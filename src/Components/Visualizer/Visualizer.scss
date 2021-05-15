@@ -53,6 +53,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__algo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    &--arr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+      width: 20%;
+      height: 3rem;
+      background-color: brown;
+      color: white;
+      &:hover {
+        color: brown !important;
+        background-color: white !important;
+      }
+    }
+    &--sort {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+      width: 20%;
+      height: 3rem;
+      background-color: chocolate;
+      color: white;
+      &:hover {
+        color: chocolate !important;
+        background-color: white !important;
+      }
+    }
+  }
 }
 
 button {
@@ -61,17 +96,27 @@ button {
 }
 
 .code {
-  position: absolute;
-  top: 4rem;
-  right: 1rem;
-  width: 21rem;
-  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  div {
+    margin: 1rem;
+    div {
+      margin: 0;
+    }
+  }
 }
 
-.input-size {
-  text-align: center;
-  h3 {
-    margin: 0;
+.input {
+  display: flex;
+  &-size {
+    text-align: center;
+    margin: 1rem;
+    h3 {
+      margin: 0;
+    }
+    margin-bottom: 0.5rem;
   }
-  margin-bottom: 0.5rem;
 }
