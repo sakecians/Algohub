@@ -30,7 +30,7 @@ function Visualizer() {
   const [array, setArray] = useState([]);
   const [size, setSize] = useState(5);
   const [speed, setSpeed] = UseInputState(500);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled] = useState(false);
 
   useEffect(() => {
     resetArray();
@@ -55,7 +55,7 @@ function Visualizer() {
   //   if(e.key === 'Enter') resetArray();
   // }
 
-  const { algorithm, updateAlgorithm } = useContext(AlgorithmContext);
+  const { algorithm } = useContext(AlgorithmContext);
 
   const handleSort = () => {
     // setIsDisabled(true);
@@ -167,7 +167,7 @@ async function bubbleSort(array, setArray) {
     setTimeout(function () {
       if (animations[i].length === 1) {
         if (animations[i][0] === "sorted") {
-          completedColor("blue");
+          completedColor("#7deb34");
         } else {
           placeCorrect(animations[i][0]);
         }
@@ -197,7 +197,7 @@ async function mergeSort(array, setArray) {
       if (i < animations.length - 1 && animations[i][0] === "merge") {
         mergeColorChange(animations[i][1], animations[i][2]);
       } else if (animations[i][0] === "completed") {
-        completedColor("green");
+        completedColor("#7deb34");
       } else if (animations[i][0] === "compare") {
         colorChange(animations[i][1], animations[i][2]);
       } else {
@@ -224,7 +224,7 @@ async function quickSort(array, setArray) {
   async function myLoop() {
     setTimeout(async function () {
       if (animations[i].length === 1) {
-        completedColor("blue");
+        completedColor("#7deb34");
       } else if (animations[i][0] === "compare") {
         colorChange(animations[i][1], animations[i][2]);
       } else if (animations[i][0] === "placed") {
@@ -253,7 +253,7 @@ function radixSort(array, setArray) {
   function myLoop() {
     setTimeout(function () {
       if (animations[i].length === 1 && animations[i][0] === "completed") {
-        completedColor("blue");
+        completedColor("#7deb34");
       } else if (animations[i][0] === "digitBucket") {
         let digitBucket = animations[i][1];
         for (let j = 0; j < digitBucket.length; j++) {
