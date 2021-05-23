@@ -68,9 +68,10 @@
       height: 3rem;
       background-color: brown;
       color: white;
+      transition: 0.2s ease-in;
       &:hover {
-        color: brown !important;
-        background-color: white !important;
+        background-color: #590304 !important;
+        cursor: pointer;
       }
     }
     &--sort {
@@ -81,10 +82,11 @@
       width: 20%;
       height: 3rem;
       background-color: chocolate;
+      transition: 0.2s ease-in;
       color: white;
       &:hover {
-        color: chocolate !important;
-        background-color: white !important;
+        background-color: #9c4406 !important;
+        cursor: pointer;
       }
     }
   }

@@ -1,5 +1,6 @@
 import React from 'react'
-import "./AlgoExplain.scss";
+import './styles.scss';
+
 export default function AlgoExplain() {
     const styles={
         container:{
@@ -13,21 +14,19 @@ export default function AlgoExplain() {
             <div>
                 <h2>BUBBLE SORT</h2>
             </div>
-            <div classname="container" style={styles.container}>
-                <div classname="item">
+            <div style={styles.container}>
+                <div>
                     hi
                 </div>
                 
-                <div classname="item">
+                <div>
                     hi
                 </div>
                 
-                <div classname="item">
+                <div>
                     hi
                 </div>
             </div>
         </div>
-        
-
     )
 }
