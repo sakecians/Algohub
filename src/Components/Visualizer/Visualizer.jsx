@@ -3,7 +3,7 @@ import { getBubbleSortAnimation } from "../../Algorithms/BubbleSort";
 import { getMergeSortAnimations } from "../../Algorithms/Test";
 import { getQuickSortAnimation } from "../../Algorithms/QuickSort";
 import { getRadixSortAnimations } from "../../Algorithms/RadixSort";
-import AlgoExplain from "../AlgoExplain/AlgoExplain";
+import Explaination from '../Explaination/Explaination';
 import "./Visualizer.scss";
 
 import Navbar from "../Navbar/Navbar";
@@ -87,7 +87,7 @@ function Visualizer() {
         array={array}
         resetArray={resetArray}
       />
-      <AlgoExplain />
+      <Explaination />
       <div className="input">
         <div className="input-size">
           <h3>Enter size </h3>
