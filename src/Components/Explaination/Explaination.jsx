@@ -1,7 +1,25 @@
 import React, {useContext} from "react";
 import { AlgorithmContext } from "../../context/Algorithm.context";
 import {merge, bubble, quick, radix} from './Text';
-import "./Navbar.scss";
+import "./Explaination.scss";
+import VideoPlayer from '../Video/Video';
+
+// import { YoutubePlayer } from "reactjs-media";
+// const App = () => {
+//   return (
+//       <div>
+//           <YoutubePlayer
+//               src="https://youtu.be/MIDWBfjW2v4" 
+//               width={650}
+//               height={600}
+//           />
+//       </div>
+//   );
+// };
+
+
+
+
 
 function Explaination(props) {
   const { algorithm } = useContext(AlgorithmContext);
@@ -9,8 +27,9 @@ function Explaination(props) {
   return (
     <div className="container">
       <div className="container__header">
-        <h2 style={{textTransform: 'uppercase'}}>{algorithm}</h2>
+        <h2 style={{textTransform: 'uppercase'}}>{algorithm} SORT</h2>
       </div>
+        <VideoPlayer/>
       <div className="container__cols">
         <div className="container__cols--item">
           <h4>Explanation</h4>

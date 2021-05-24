@@ -4,11 +4,14 @@ import { getMergeSortAnimations } from "../../Algorithms/Test";
 import { getQuickSortAnimation } from "../../Algorithms/QuickSort";
 import { getRadixSortAnimations } from "../../Algorithms/RadixSort";
 import Explaination from '../Explaination/Explaination';
+
+
 import "./Visualizer.scss";
 
 import Navbar from "../Navbar/Navbar";
 import CodeView from "../CodeView/CodeView";
 import CodeViewPy from '../CodeView/CodeViewPy';
+import CodeViewJava from '../CodeView/CodeViewJava';
 import { AlgorithmContext } from "../../context/Algorithm.context";
 
 import {
@@ -87,6 +90,8 @@ function Visualizer() {
         array={array}
         resetArray={resetArray}
       />
+      
+
       <Explaination />
       <div className="input">
         <div className="input-size">
@@ -151,6 +156,10 @@ function Visualizer() {
         <div>
           <b>Python</b>
           <CodeViewPy />
+        </div>
+        <div>
+          <b>Java</b>
+          <CodeViewJava />
         </div>
       </div>
     </div>

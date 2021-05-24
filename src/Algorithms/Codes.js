@@ -279,3 +279,19 @@ def radixSort(arr):
         exp *= 10
 `;
 
+
+export const Java_BUBBLE = `
+
+`;
+
+export const Java_MERGE = `
+
+`;
+
+export const Java_QUICK = `
+
+`;
+
+export const Java_RADIX = `
+
+`;

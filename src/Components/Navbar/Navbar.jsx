@@ -35,7 +35,8 @@ function Navbar(props) {
 
         <a
           className="quiz"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfcyVmlJNaBdu0sf5S9TAuJ1qu9ai1sHZ5I7naYO53r4azMmw/viewform?usp=sf_link"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfcyVmlJNaBdu0sf5S9TAuJ1qu9ai1sHZ5I7naYO53r4azMmw/viewform?usp=sf_link"
+       
         >
           Quiz
         </a>
