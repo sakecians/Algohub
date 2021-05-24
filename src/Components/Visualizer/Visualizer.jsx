@@ -149,7 +149,7 @@ function Visualizer() {
 
       <div className="code">
         <div>
-          <b>Javascipt</b>
+          <b>Javascript</b>
 
           <CodeView />
         </div>
