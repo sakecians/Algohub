@@ -64,17 +64,20 @@ export const quick = {
 
 export const radix = {
     explaination: {
-        exp: "Radix sort is a sorting technique based on divide and conquer technique. Merge sort first divides the array into equal halves and then combines them in a sorted manner. The merge() function is used for merging two halves. Merge sort keeps on dividing the list into equal halves until there is only a single element left in the list. The single element in the list is considered as sorted list. Merge sort combines the smaller sorted list and enters into the new list in sorted order.",
+        exp: "Radix sort is one of the sorting algorithms used to sort a list of integer numbers in order. In radix sort algorithm, a list of integer numbers will be sorted based on the digits of individual numbers. Sorting is performed from least significant digit to the most significant digit. Radix sort algorithm requires the number of passes which are equal to the number of digits present in the largest number among the list of numbers. For example, if the largest number is a 3 digit number then that list is sorted with 3 passes.",
         timeComplexity: {
-            bestCase: 'O(n log n)',
-            avgCase: 'O(n log n)',
-            worstCase: 'O(n log n)',
+            bestCase: 'O(n+k)',
+            avgCase: 'O(n+k)',
+            worstCase: 'O(n+k)',
         },
-        spaceComplexity: 'O(n)',
+        spaceComplexity: 'O(n+2^d)',
         algorithm: [
-            'Break up the array into halves until you have arrays that are empty or have one element.',
-            'Once you have smaller sorted arrays, merge those arrays with other sorted arrays until you are back at the full length of the array.',
-            'Once the array has been merged back together, return the merged and sorted array',
+            'Define 10 queues each representing a bucket for each digit from 0 to 9.',
+            'Consider the least significant digit of each number in the list which is to be sorted.',
+            'Insert each number into their respective queue based on the least significant digit.',
+            'Group all the numbers from queue 0 to queue 9 in the order they have inserted into their respective queues.',
+            'Repeat from step 3 based on the next least significant digit.',
+            'Repeat from step 2 until all the numbers are grouped based on the most significant digit.',
         ],
     }
 }
