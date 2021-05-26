@@ -32,13 +32,24 @@ function Navbar(props) {
           <option value="quick">Quick Sort</option>
           <option value="radix">Radix Sort</option>
         </select>
-
+        <a className="quiz" href="#video">
+          <b>Video</b>
+        </a>
+        <a className="quiz" href="#algorithm">
+          <b>Algorithm</b>
+        </a>
+        <a className="quiz" href="#visualiser">
+          <b>Visualiser</b>
+        </a>
+        <a className="quiz" href="#codes">
+          <b>Code</b>
+        </a>
         <a
           className="quiz"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSfcyVmlJNaBdu0sf5S9TAuJ1qu9ai1sHZ5I7naYO53r4azMmw/viewform?usp=sf_link"
-       
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfcyVmlJNaBdu0sf5S9TAuJ1qu9ai1sHZ5I7naYO53r4azMmw/viewform?usp=sf_link"
+          //href="#visualiser"
         >
-          Quiz
+          <b>Quiz</b>
         </a>
       </div>
     </div>

@@ -3,15 +3,13 @@ import { getBubbleSortAnimation } from "../../Algorithms/BubbleSort";
 import { getMergeSortAnimations } from "../../Algorithms/Test";
 import { getQuickSortAnimation } from "../../Algorithms/QuickSort";
 import { getRadixSortAnimations } from "../../Algorithms/RadixSort";
-import Explaination from '../Explaination/Explaination';
-
-
+import Explaination from "../Explaination/Explaination";
 import "./Visualizer.scss";
 
 import Navbar from "../Navbar/Navbar";
 import CodeView from "../CodeView/CodeView";
-import CodeViewPy from '../CodeView/CodeViewPy';
-import CodeViewJava from '../CodeView/CodeViewJava';
+import CodeViewPy from "../CodeView/CodeViewPy";
+import CodeViewJava from "../CodeView/CodeViewJava";
 import { AlgorithmContext } from "../../context/Algorithm.context";
 
 import {
@@ -90,64 +88,64 @@ function Visualizer() {
         array={array}
         resetArray={resetArray}
       />
-      
 
       <Explaination />
-      <div className="input">
-        <div className="input-size">
-          <h3>Enter size </h3>
-          <input
-            type="range"
-            min="5"
-            max="25"
-            value={size}
-            onChange={handleSizeChange}
-          />
+      <div id="visualiser">
+        <div className="input">
+          <div className="input-size">
+            <h3>Enter size </h3>
+            <input
+              type="range"
+              min="5"
+              max="25"
+              value={size}
+              onChange={handleSizeChange}
+            />
+          </div>
+          <div className="input-size">
+            <h3>Enter speed (Beta) </h3>
+            <input
+              type="range"
+              min="50"
+              max="1000"
+              value={speed}
+              onChange={setSpeed}
+            />
+          </div>
         </div>
-        <div className="input-size">
-          <h3>Enter speed (Beta) </h3>
-          <input
-            type="range"
-            min="50"
-            max="1000"
-            value={speed}
-            onChange={setSpeed}
-          />
-        </div>
-      </div>
 
-      <div className="visualize__algo">
-        <div onClick={() => resetArray()} className="visualize__algo--arr">
-          Random Array
+        <div className="visualize__algo">
+          <div onClick={() => resetArray()} className="visualize__algo--arr">
+            Random Array
+          </div>
+          <div
+            onClick={handleSort}
+            className={
+              isDisabled ? "nav__algo--sort-disabled" : "visualize__algo--sort"
+            }
+          >
+            Sort
+          </div>
         </div>
-        <div
-          onClick={handleSort}
-          className={
-            isDisabled ? "nav__algo--sort-disabled" : "visualize__algo--sort"
-          }
-        >
-          Sort
+        <div className="bars">
+          {array.map((value, idx) => {
+            let cls = numberToWord(value);
+            return (
+              <div
+                className={`array-bars ${cls}`}
+                key={idx}
+                style={{
+                  background: "turquoise",
+                  height: `${value}px`,
+                }}
+              >
+                {value}
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div className="bars">
-        {array.map((value, idx) => {
-          let cls = numberToWord(value);
-          return (
-            <div
-              className={`array-bars ${cls}`}
-              key={idx}
-              style={{
-                background: "turquoise",
-                height: `${value}px`,
-              }}
-            >
-              {value}
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="code">
+      <div className="code" id="codes">
         <div>
           <b>Javascript</b>
 

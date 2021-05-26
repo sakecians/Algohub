@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .bars {
   display: flex;
   height: auto;
@@ -17,6 +21,7 @@
 .container {
   display: flex;
   justify-content: center;
+  padding-top: 50px;
 }
 
 .child {
@@ -53,7 +58,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  // padding-top: 50px;
   &__algo {
     display: flex;
     width: 100%;
@@ -98,6 +103,7 @@ button {
 }
 
 .code {
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -122,4 +128,12 @@ button {
     }
     margin-bottom: 0.5rem;
   }
+}
+
+#visualiser {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 }
