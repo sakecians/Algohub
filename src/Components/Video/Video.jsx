@@ -28,7 +28,7 @@ function VideoPlayer() {
 
   return (
     <div id="video">
-      <ReactPlayer url={videoUrl} />
+      <ReactPlayer url={videoUrl} controls />
     </div>
   );
 }
