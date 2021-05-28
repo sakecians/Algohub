@@ -18,7 +18,7 @@ function VideoPlayer() {
       setVideoUrl("https://youtu.be/rzAUr856LW8");
     }
     if (algorithm === "radix") {
-      setVideoUrl("https://youtu.be/upuopofDb2Q");
+      setVideoUrl("https://youtu.be/IRTpYmiI5_E");
     }
   };
 
