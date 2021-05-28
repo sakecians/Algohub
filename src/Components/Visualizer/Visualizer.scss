@@ -137,3 +137,15 @@ button {
   align-items: center;
   padding-top: 50px;
 }
+
+.colorcodes {
+  &__container {
+    margin: "1rem";
+    &--color{
+      width: '1rem';
+      height: '1rem';
+      border-radius: 50%;
+      background-color: #7deb34;
+    }
+  }
+}

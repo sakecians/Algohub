@@ -77,6 +77,30 @@ function Visualizer() {
     }
   };
 
+  const styles = {
+    green: {
+      width: '1rem',
+      height: '1rem',
+      borderRadius: '50%',
+      backgroundColor: '#7deb34',
+      marginRight: '1rem',
+    },
+    yellow: {
+      width: '1rem',
+      height: '1rem',
+      borderRadius: '50%',
+      backgroundColor: 'yellow',
+      marginRight: '1rem',
+    },
+    red: {
+      width: '1rem',
+      height: '1rem',
+      borderRadius: '50%',
+      backgroundColor: 'red',
+      marginRight: '1rem',
+    }
+  }
+
   return (
     <div className="visualize">
       <Navbar
@@ -143,6 +167,29 @@ function Visualizer() {
               </div>
             );
           })}
+        </div>
+      </div>
+      <div className="colorcodes">
+        <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}} className="colorcodes__container">
+          <div style={styles.yellow} className="colorcodes__container--color">
+          </div>
+          <div>
+            <i>compare and Swaps</i>
+          </div>
+        </div>
+        <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}} className="colorcodes__container">
+          <div style={styles.red} className="colorcodes__container--color">
+          </div>
+          <div>
+            <i>Compare no swaps</i>
+          </div>
+        </div>
+        <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}} className="colorcodes__container">
+          <div style={styles.green} className="colorcodes__container--color">
+          </div>
+          <div>
+            <i>Sorted</i>
+          </div>
         </div>
       </div>
       <div className="code" id="codes">
