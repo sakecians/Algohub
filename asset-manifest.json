@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Algohub/static/css/main.940b9e34.chunk.css",
-    "main.js": "/Algohub/static/js/main.866aef9d.chunk.js",
-    "main.js.map": "/Algohub/static/js/main.866aef9d.chunk.js.map",
+    "main.css": "/Algohub/static/css/main.51a1d3a9.chunk.css",
+    "main.js": "/Algohub/static/js/main.77a0c726.chunk.js",
+    "main.js.map": "/Algohub/static/js/main.77a0c726.chunk.js.map",
     "runtime-main.js": "/Algohub/static/js/runtime-main.3a40be77.js",
     "runtime-main.js.map": "/Algohub/static/js/runtime-main.3a40be77.js.map",
-    "static/js/2.9fd650ef.chunk.js": "/Algohub/static/js/2.9fd650ef.chunk.js",
-    "static/js/2.9fd650ef.chunk.js.map": "/Algohub/static/js/2.9fd650ef.chunk.js.map",
+    "static/js/2.dd49eeee.chunk.js": "/Algohub/static/js/2.dd49eeee.chunk.js",
+    "static/js/2.dd49eeee.chunk.js.map": "/Algohub/static/js/2.dd49eeee.chunk.js.map",
     "index.html": "/Algohub/index.html",
-    "static/css/main.940b9e34.chunk.css.map": "/Algohub/static/css/main.940b9e34.chunk.css.map",
-    "static/js/2.9fd650ef.chunk.js.LICENSE.txt": "/Algohub/static/js/2.9fd650ef.chunk.js.LICENSE.txt"
+    "static/css/main.51a1d3a9.chunk.css.map": "/Algohub/static/css/main.51a1d3a9.chunk.css.map",
+    "static/js/2.dd49eeee.chunk.js.LICENSE.txt": "/Algohub/static/js/2.dd49eeee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3a40be77.js",
-    "static/js/2.9fd650ef.chunk.js",
-    "static/css/main.940b9e34.chunk.css",
-    "static/js/main.866aef9d.chunk.js"
+    "static/js/2.dd49eeee.chunk.js",
+    "static/css/main.51a1d3a9.chunk.css",
+    "static/js/main.77a0c726.chunk.js"
   ]
 }
